@@ -44,17 +44,18 @@ let package = Package(
 				// Compile-time options
 				// https://sqlite.org/compile.html#recommended_compile_time_options
 				.define("SQLITE_DQS", to: "0"),
-				.define("SQLITE_THREADSAFE", to: "0"),
+				.define("SQLITE_THREADSAFE", to: "1"),
 				.define("SQLITE_DEFAULT_MEMSTATUS", to: "0"),
 				.define("SQLITE_DEFAULT_WAL_SYNCHRONOUS", to: "1"),
 				.define("SQLITE_LIKE_DOESNT_MATCH_BLOBS"),
 				.define("SQLITE_MAX_EXPR_DEPTH", to: "0"),
-				.define("SQLITE_OMIT_DECLTYPE", to: "0"),
+//				.define("SQLITE_OMIT_DECLTYPE"),
+                .define("SQLITE_ENABLE_NORMALIZE"),
 				.define("SQLITE_OMIT_DEPRECATED"),
 				.define("SQLITE_OMIT_PROGRESS_CALLBACK"),
 				.define("SQLITE_OMIT_SHARED_CACHE"),
 				.define("SQLITE_USE_ALLOCA"),
-				.define("SQLITE_OMIT_AUTOINIT"),
+//                .define("SQLITE_OMIT_AUTOINIT", to: "0"),
 				.define("SQLITE_STRICT_SUBTYPE", to: "1"),
 				// Platform configuration
 				// https://sqlite.org/compile.html#_platform_configuration
