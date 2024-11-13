@@ -13,6 +13,9 @@ Additionally, the [carray](https://sqlite.org/carray.html), [decimal](https://sq
 
 The package also includes [shims](Sources/CSQLite/include/csqlite_shims.h) for various C functions not easily accessible from Swift.
 
+Current SQLite Version 3.47.0
+Herein 3.47.1 indicates a delta in flag settings
+
 ## License
 
 SQLite is in the [public domain](https://sqlite.org/copyright.html).
