@@ -109,11 +109,16 @@ let package = Package(
 	name: "CSQLite",
 	products: [
 		// Products define the executables and libraries a package produces, making them visible to other packages.
-		.library(
-			name: "CSQLite",
-			targets: [
-				"CSQLite",
-			]),
+        .library(
+            name: "CSQLite",
+            targets: [
+                "CSQLite",
+            ]),
+        .library(
+            name: "CSQLiteVec",
+            targets: [
+                "CSQLiteVec",
+            ]),
 	],
 	traits: [
 		// Compile-time options
@@ -299,6 +304,21 @@ let package = Package(
 			linkerSettings: [
 				.linkedLibrary("m"),
 			]),
+        
+        .target(
+            name: "CSQLiteVec",
+            dependencies: [
+                "CSQLite",
+            ],
+            cSettings: compileTimeOptions + platformConfiguration + features + [
+                // For statically linking extensions
+                // https://sqlite.org/loadext.html#statically_linking_a_run_time_loadable_extension
+                .define("SQLITE_CORE", to: "1"),
+            ],
+            linkerSettings: [
+                .linkedLibrary("m"),
+            ]),
+
 		.testTarget(
 			name: "CSQLiteTests",
 			dependencies: [

@@ -83,6 +83,10 @@ The following traits enable commonly-used SQLite features:
 > [!NOTE]
 > The `ENABLE_SESSION` trait also sets the `ENABLE_PREUPDATE_HOOK` trait.
 
+## Extensions
+
+https://github.com/jkrukowski/SQLiteVec
+
 ## License
 
 SQLite is in the [public domain](https://sqlite.org/copyright.html).
